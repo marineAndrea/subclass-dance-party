@@ -1,9 +1,8 @@
-var SyncroDancer = function(top, left, timeBetweenSteps){
+var Metronomers = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
-  this.$node.addClass('syncro');
+  this.$node.addClass('metro');
   // this.synced = false;
   // this.begin = (new Date().getTime()) - window.hist;
-  // console.log(this.begin);
   this.sizeState = 'inflate';
   this.timeBetweenSteps = 1000;
   this.trans = this.timeBetweenSteps,
@@ -16,10 +15,10 @@ var SyncroDancer = function(top, left, timeBetweenSteps){
   this.$node.css('background-color', 'black');
 };
 
-SyncroDancer.prototype = Object.create(Dancer.prototype);
-SyncroDancer.prototype.constructor = SyncroDancer;
+Metronomers.prototype = Object.create(Dancer.prototype);
+Metronomers.prototype.constructor = Metronomers;
 
-SyncroDancer.prototype.step = function(){
+Metronomers.prototype.step = function(){
   Dancer.prototype.step.call(this);
 
   var styleSettings = {

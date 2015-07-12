@@ -1,26 +1,20 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.hist = new Date().getTime();
+  console.log('hist', window.hist);
 
-  window.clock = new Date();
-
-  console.log(clock);
   $(".addDancerButton").on("click", function(event){
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
-
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
     // make a dancer with a random position
-
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 100
     );
     window.dancers.push(dancer);
-
     $('body').append(dancer.$node);
-
   });
 
   $(".lineup").on("click", function(event){
@@ -34,7 +28,6 @@ $(document).ready(function(){
     }
   });
 
-  
   // Global variable that keeps track of the mouse position
   window.currentMousePos = { x: -1, y: -1 };
   $(document).mousemove(function(event) {

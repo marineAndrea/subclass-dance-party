@@ -3,8 +3,6 @@ var Dancer = function(top, left, timeBetweenSteps){
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.timeBetweenSteps = timeBetweenSteps;
-  // this.$node.css('height', '10px');
-  // this.$node.css('width', '10px');
   this.step();
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -15,17 +13,15 @@ var Dancer = function(top, left, timeBetweenSteps){
 Dancer.prototype.step = function(){
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  var me = this;
-  console
+  var context = this;
   setTimeout(function() {
-    me.step();
-  }, this.timeBetweenSteps); // in setTimeout, originally had no function wrapper 'this' is bound to global window FREE FUNCTION CALL SO THIS IS BOUND TO WINDOW
+    context.step();
+  }, this.timeBetweenSteps); // FREE FUNCTION CALL SO THIS IS HAS TO BE BOUND TO WINDOW
 };
 
 Dancer.prototype.setPosition = function(top, left){
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
-  //
   var styleSettings = {
     top: top,
     left: left

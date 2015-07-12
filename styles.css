@@ -23,7 +23,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:20px solid violet;
+  border:20px solid yellow;
   border-radius:20px;
   position:absolute;
 }
@@ -33,7 +33,8 @@ body, a:link, a:visited, a:active{
   position: absolute;
 }
 .syncro {
-  position: absolute;
+  border: none;
+  border-radius: none;
   border: 0px;
   transition-timing-function: linear;
   transition-property: height, width;
